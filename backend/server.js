@@ -35,10 +35,10 @@ app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
 // Error handling middleware (optional but recommended)
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ success: false, message: 'Server Error' });
-});
+// app.use((err, req, res, next) => {
+//   console.error(err.stack);
+//   res.status(500).json({ success: false, message: 'Server Error' });
+// });
 
 app.get('/',(req,res)=>{
     res.send("API working successfully")
