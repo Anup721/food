@@ -4,9 +4,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
-     "build": "mkdir -p dist && cp server.js dist/server.js",
-  "start": "node dist/server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
