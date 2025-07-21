@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url';
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5001;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,10 +35,10 @@ app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
 // Error handling middleware (optional but recommended)
-// app.use((err, req, res, next) => {
-//   console.error(err.stack);
-//   res.status(500).json({ success: false, message: 'Server Error' });
-// });
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ success: false, message: 'Server Error' });
+});
 
 app.get('/',(req,res)=>{
     res.send("API working successfully")
