@@ -34,13 +34,9 @@ app.use('/api/food', foodRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
-// Root route
-app.get('/', (req, res) => {
-  res.json({
-    success: true,
-    message: 'API is running',
-  });
-});
+app.get('/',(req,res)=>{
+    res.send("API working successfully")
+})
 
 // Error handling middleware (optional but recommended)
 app.use((err, req, res, next) => {
