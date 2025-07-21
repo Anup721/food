@@ -34,15 +34,15 @@ app.use('/api/food', foodRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
-app.get('/',(req,res)=>{
-    res.send("API working successfully")
-})
-
 // Error handling middleware (optional but recommended)
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ success: false, message: 'Server Error' });
 });
+
+app.get('/',(req,res)=>{
+    res.send("API working successfully")
+})
 
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
