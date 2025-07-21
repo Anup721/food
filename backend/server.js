@@ -17,6 +17,9 @@ const port = process.env.PORT || 5001;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const serverless = require("serverless-http");
+module.exports = serverless(app);
+
 
 // Middleware
 app.use(express.json());
